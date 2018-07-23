@@ -3,12 +3,12 @@ Rails.application.routes.draw do
   root to: 'site/pages#index'  
 
   namespace :site do
+    resources :projects
     get 'pages/index'
     get 'pages/profile'
   end
 
   get "/profile" => "site/pages#profile", as: :profile
-
 
 
   devise_scope :user do
